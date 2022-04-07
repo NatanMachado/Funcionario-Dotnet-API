@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30114.105
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Funcionario-API", "Funcionario-API\Funcionario-API.csproj", "{B1160A40-4EB6-4980-9065-CA0D604ED596}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Funcionario-API-Test", "Funcionario-API-Test\Funcionario-API-Test.csproj", "{19B13BF1-6ADA-42DE-882E-C81C43873541}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B1160A40-4EB6-4980-9065-CA0D604ED596}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1160A40-4EB6-4980-9065-CA0D604ED596}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1160A40-4EB6-4980-9065-CA0D604ED596}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1160A40-4EB6-4980-9065-CA0D604ED596}.Release|Any CPU.Build.0 = Release|Any CPU
+		{19B13BF1-6ADA-42DE-882E-C81C43873541}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19B13BF1-6ADA-42DE-882E-C81C43873541}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19B13BF1-6ADA-42DE-882E-C81C43873541}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19B13BF1-6ADA-42DE-882E-C81C43873541}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

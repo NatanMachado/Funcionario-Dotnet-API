@@ -15,6 +15,6 @@ jobs:
           SENHA_DOCKER_HUB: ${{secrets.SENHA_DOCKER_HUB}}
         run: docker login -u $USUARIO_DOCKER_HUB -p $SENHA_DOCKER_HUB
       - name: Construcao container
-        run: docker build -t codeuai/Funcionario-API:latest -f Dockerfile .
+        run: docker build -t codeuai/employee-api:latest -f Dockerfile .
       - name: Push
-        run: docker push codeuai/Funcionario-API:latest
+        run: docker push codeuai/employee-api:latest

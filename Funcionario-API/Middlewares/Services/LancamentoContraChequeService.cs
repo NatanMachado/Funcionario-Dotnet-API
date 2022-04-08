@@ -1,13 +1,17 @@
 using FuncionarioApi.Data.HashMaps;
-using FuncionarioApi.Models;
 using FuncionarioApi.Models.Entity;
 using FuncionarioApi.Models.Enum;
 
 namespace Funcionario_API.Middlewares.Services
 {
+    public interface ILancamentoContraChequeService
+    {
+        public IEnumerable<Lancamento> MontarLancamentos(Funcionario funcionario);
+    }
+
     public class LancamentoContraChequeService
     {
-        public List<Lancamento> montarLancamentos(Funcionario funcionario)
+        public IEnumerable<Lancamento> MontarLancamentos(Funcionario funcionario)
         {
             List<Lancamento> lancamentos = new List<Lancamento>();
             lancamentos.Add(new Lancamento("Salário", funcionario.SalarioBruto, TipoLancamento.Remuneracao));
@@ -26,7 +30,7 @@ namespace Funcionario_API.Middlewares.Services
             {
                 lancamentos.Add(new Lancamento("Vale Transporte", calculaValeTransporte(funcionario.SalarioBruto), TipoLancamento.Desconto));
             }
-            return lancamentos;
+            return lancamentos.AsReadOnly();
         }
 
         private decimal calcularINSS(decimal salario)

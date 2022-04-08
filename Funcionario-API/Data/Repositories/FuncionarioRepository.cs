@@ -47,6 +47,5 @@ namespace FuncionarioApi.Data.Repositories
         {
             context.Dispose();
         }
-
     }
 }

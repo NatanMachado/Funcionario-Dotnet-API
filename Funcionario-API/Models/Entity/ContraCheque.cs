@@ -5,16 +5,22 @@ namespace FuncionarioApi.Models.Entity
 {
     public class ContraCheque
     {
+         public ContraCheque(Funcionario funcionario, ILancamentoContraChequeService service)
+        {
+            this.MesReferencia = DateTime.Now.ToString("MMMM");
+            this.SalarioBruto = funcionario.SalarioBruto;
+            this.Lancamentos = service.MontarLancamentos(funcionario);
+        }
         public ContraCheque(Funcionario funcionario)
         {
             this.MesReferencia = DateTime.Now.ToString("MMMM");
             this.SalarioBruto = funcionario.SalarioBruto;
-            this.Lancamentos = new LancamentoContraChequeService().montarLancamentos(funcionario);
+            this.Lancamentos = new LancamentoContraChequeService().MontarLancamentos(funcionario);
         }
         public String MesReferencia { get; }
         public decimal SalarioBruto { get; }
 
-        public List<Lancamento> Lancamentos { get; }
+        public IEnumerable<Lancamento> Lancamentos { get; }
 
         public decimal TotalDescontos { get => GetTotalDescontos(); }
 

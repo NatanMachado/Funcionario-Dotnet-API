@@ -1,7 +1,7 @@
 using System.Text.Json.Serialization;
 using FuncionarioApi.Models.Enum;
 
-namespace FuncionarioApi.Models
+namespace FuncionarioApi.Models.Entity
 {
     public class Lancamento
     {

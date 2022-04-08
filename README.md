@@ -52,7 +52,7 @@ O projeto utiliza _.Net Core 6.0_, _Docker_ e banco de dados _PostgreSQL_.
 ```
 - **POST: `api/Funcionario`**
   - Cadastra um funcionário passando o `json` com os dados do mesmo. O _endpoint_ retorna o id gerado para o respectivo funcionário se o cadastro foi realizado com sucesso.
-- Exemplo (dados fictícios):
+  - Exemplo (dados fictícios):
 ```json
 {
     "id": 0,
@@ -67,3 +67,17 @@ O projeto utiliza _.Net Core 6.0_, _Docker_ e banco de dados _PostgreSQL_.
     "valeTransporte": false
 }
 ```
+
+### Iniciar Aplicação (.NET 6.0.3)
+
+- Certifique-se de que o [.NET 6.0.3](https://dotnet.microsoft.com/en-us/download/dotnet/6.0) esteja instalado.
+- Faça o [clone do projeto](https://github.com/NatanMachado/Funcionario-Dotnet-API.git) 
+- Na pasta raiz do projeto execute por um terminal:
+  - Aplicação: `dotnet run --project Funcionario-API`
+  - Testes: `dotnet test`
+
+### Iniciar Aplicação (Docker)
+
+- Certifique de que tenha o [Docker](https://docs.docker.com/get-docker/) instalado.
+- Execute o comando por um terminal:
+  - `docker run -d -p {porta disponível}:80 codeuai/employee-api`

@@ -1,0 +1,20 @@
+name: Publicacao Container
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Login
+        env:
+          USUARIO_DOCKER_HUB: ${{secrets.USUARIO_DOCKER_HUB}}
+          SENHA_DOCKER_HUB: ${{secrets.SENHA_DOCKER_HUB}}
+        run: docker login -u $USUARIO_DOCKER_HUB -p $SENHA_DOCKER_HUB
+      - name: Construcao container
+        run: docker build -t codeuai/employee-api:latest -f Dockerfile .
+      - name: Push
+        run: docker push codeuai/employee-api:latest

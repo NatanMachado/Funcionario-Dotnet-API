@@ -1,3 +1,4 @@
+
 name: .NET
 
 on: [pull_request]
@@ -8,13 +9,11 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Setup .NET Core
-      uses: actions/setup-dotnet@v1
-      with:
-         dotnet-version: 6.0.3
+      uses: actions/setup-dotnet@v2.0.0
     - name: Restaurar dependencias
-      run: dotnet restore ./ControleFolhaPagamento.sln
+      run: dotnet restore ./Funcionario-API.sln
     - name: Compilacao
-      run: dotnet build ./ControleFolhaPagamento.sln
+      run: dotnet build ./Funcionario-API.sln
     - name: Testes
-      run: dotnet test ./ControleFolhaPagamento.sln
+      run: dotnet test ./Funcionario-API.sln
 

@@ -13,7 +13,6 @@ builder.Services.AddControllers();
 
 builder.Services.AddMvc().AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<ValidadorFuncionario>());
 
-
 var configuration = new ConfigurationBuilder()
                 .SetBasePath(AppDomain.CurrentDomain.BaseDirectory)
                 .AddJsonFile("appsettings.json")
@@ -22,23 +21,7 @@ var configuration = new ConfigurationBuilder()
 builder.Services.AddEntityFrameworkNpgsql().AddDbContext<DBFuncionarioContext>(
     options => options.UseNpgsql(configuration.GetConnectionString("Default")));
 
-builder.Services.AddEndpointsApiExplorer();
-
 var app = builder.Build();
-
-if (app.Environment.IsDevelopment())
-{
-    app.UseDeveloperExceptionPage();
-}
-else
-{
-    app.UseHsts();
-}
-
-app.UseHttpsRedirection();
-app.UseAuthorization();
 app.UseMiddleware(typeof(ErrorHandlingMiddleware));
-// app.UseMvc();
-
 app.MapControllers();
 app.Run();

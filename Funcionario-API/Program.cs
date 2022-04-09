@@ -22,6 +22,9 @@ builder.Services.AddEntityFrameworkNpgsql().AddDbContext<DBFuncionarioContext>(
     options => options.UseNpgsql(configuration.GetConnectionString("Default")));
 
 var app = builder.Build();
+app.UseHttpsRedirection();
+app.UseRouting();
+app.UseAuthorization();
 app.UseMiddleware(typeof(ErrorHandlingMiddleware));
 app.MapControllers();
 app.Run();
